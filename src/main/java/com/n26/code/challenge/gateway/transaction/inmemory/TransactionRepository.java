@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
 
-    @Query("Select t.amount FROM transaction t WHERE t.createdDate >= :fromTimestamp")
+    @Query("Select t.amount FROM transaction t WHERE t.createdTimeStamp >= :fromTimestamp")
     List<Double> findAll(@Param("fromTimestamp") Timestamp fromTimestamp);
 }
